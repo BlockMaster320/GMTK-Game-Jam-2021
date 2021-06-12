@@ -1,15 +1,12 @@
 draw_self();
 
 //Draw throwTime Representation
-
-
 if (charging)
 {
 	var _lengthBase = 30;
 	var _directionBase = point_direction(oPlayer.x, oPlayer.y, mouse_x, mouse_y);
 	var _pointBase = [oPlayer.x + lengthdir_x(_lengthBase, _directionBase),
 					  oPlayer.y + lengthdir_y(_lengthBase, _directionBase)]
-	
 	
 	for (var _i = 2; _i >= 0; _i --)
 	{
@@ -28,7 +25,6 @@ if (charging)
 		draw_triangle_colour(_pointBase[0], _pointBase[1], _point1[0], _point1[1], _point2[0], _point2[1],
 							 _colour, _colour, _colour, false);
 	}
-	
 	
 	/*show_debug_message(_directionBase);*/
 }
