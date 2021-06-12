@@ -41,6 +41,7 @@
     {"id":{"name":"Ground_Top","path":"sprites/Ground_Top/Ground_Top.yy",},"order":3,},
     {"id":{"name":"sndReturning","path":"sounds/sndReturning/sndReturning.yy",},"order":6,},
     {"id":{"name":"sPlayerWalk","path":"sprites/sPlayerWalk/sPlayerWalk.yy",},"order":4,},
+    {"id":{"name":"oTutorial","path":"objects/oTutorial/oTutorial.yy",},"order":9,},
     {"id":{"name":"sPlayerBall","path":"sprites/sPlayerBall/sPlayerBall.yy",},"order":0,},
     {"id":{"name":"Grass_Top","path":"sprites/Grass_Top/Grass_Top.yy",},"order":1,},
     {"id":{"name":"Grass_TopLeft","path":"sprites/Grass_TopLeft/Grass_TopLeft.yy",},"order":2,},
