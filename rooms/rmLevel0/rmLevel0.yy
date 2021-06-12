@@ -46,7 +46,7 @@
     "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
-  "name": "rmTestRoom",
+  "name": "rmLevel0",
   "tags": [],
   "resourceType": "GMRoom",
 }
