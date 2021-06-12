@@ -16,7 +16,7 @@ switch (moveState)
 		if (charging)
 		{
 			throwTime = clamp(throwTime+1,0,throwMaxTime)
-			throwStrength = throwStrengthBase + (throwTime * .3)
+			throwStrength = throwStrengthBase + (throwMult * .3)
 		}
 		else throwTime = 0
 		if (dashRelease and charging)

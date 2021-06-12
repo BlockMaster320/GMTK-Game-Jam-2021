@@ -1,7 +1,10 @@
 Input(true)
 
 //Walk
-whsp = (right - left) * walkSp
+var spd
+if (oBall.moveState = STATE.thrown) spd = runSp
+else spd = walkSp
+whsp = (right - left) * spd
 
 //Gravity
 wvsp += grv
