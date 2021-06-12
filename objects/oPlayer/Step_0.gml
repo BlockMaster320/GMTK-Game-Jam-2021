@@ -1,7 +1,18 @@
 Input(true)
 
 //Walk
-whsp = (right - left) * walkSp
+var spd, grv
+if (oBall.moveState = STATE.thrown)
+{
+	spd = runSp
+	grv = grvLight
+}
+else
+{
+	spd = walkSp
+	grv = grvHeavy
+}
+whsp = (right - left) * spd
 
 //Gravity
 wvsp += grv
@@ -17,6 +28,7 @@ if (oBall.moveState = STATE.thrown and dashPress)
 	dhsp += lengthdir_x(dashSpd,ballDir) 
 	dvsp += lengthdir_y(dashSpd,ballDir)
 	oBall.dashed = true
+	global.screenShake += 6
 }
 
 DashFriction()
@@ -27,6 +39,18 @@ vsp = wvsp + dvsp
 
 //Collision
 Collision()
+
+//Death
+if (place_meeting(x,y,oSpike))
+{
+	dhsp = 0
+	dvsp = 0
+	wvsp = 0
+	oBall.moveState = STATE.connected
+	oBall.dashed = true
+	x = xstart
+	y = ystart
+}
 
 //Collision With the Goal
 if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oGoal.y, 50))
