@@ -9,6 +9,6 @@ enum menu
 	pause
 }
 
-levelUnlocked = 0;
+levelUnlocked = 3;
 levelCurrent = noone;
-levelArray = [rmLevel1, rmLevel1, rmLevel2];
+levelArray = [rmLevel0, rmLevel1, rmLevel2];
