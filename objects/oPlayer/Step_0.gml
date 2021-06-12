@@ -27,3 +27,25 @@ vsp = wvsp + dvsp
 
 //Collision
 Collision()
+
+//Collision With the Goal
+if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oGoal.y, 50))
+{
+	with (oMenu)
+	{
+		if (levelCurrent == levelUnlocked)
+			levelUnlocked = min(levelUnlocked + 1, array_length(levelArray) - 1);
+		
+		if (levelCurrent == levelUnlocked)
+		{
+			menuState = menu.mainMenu;
+			levelCurrent = noone;
+			room_goto(rmMenu);
+		}
+		else
+		{
+			levelCurrent ++;
+			room_goto(levelArray[levelCurrent]);
+		}
+	}
+}
