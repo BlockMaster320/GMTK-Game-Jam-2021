@@ -11,24 +11,32 @@ switch (moveState)
 		x = pX
 		y = pY
 		
-		if (dashHold)
+		if (dashPress) charging = true
+		
+		if (charging)
 		{
 			throwTime = clamp(throwTime+1,0,throwMaxTime)
 			throwStrength = throwStrengthBase + (throwTime * .3)
 		}
 		else throwTime = 0
-		if (dashRelease)
+		if (dashRelease and charging)
 		{
 			dhsp = lengthdir_x(throwStrength,mDir)
 			dvsp = lengthdir_y(throwStrength,mDir)
 			moveState = STATE.thrown
 		}
 		
+		if (dashRelease and charging) charging = false
+		
 		break
 	
 	case STATE.thrown:
 		collide = true
-		if (returnPress) moveState = STATE.comingBack
+		if (dashPress and dashed)
+		{
+			moveState = STATE.comingBack
+			dashed = false
+		}
 		break
 	
 	case STATE.comingBack:

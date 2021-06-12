@@ -20,10 +20,15 @@ moveState = STATE.connected
 collide = true
 
 //Throw
+charging = false
 throwStrength = 0
 throwStrengthBase = 20
 throwTime = 0
 throwMaxTime = 80
 
+//Thrown
+dashed = false
+
 //Return
 returnSpeed = 50
+spdBoost = 10

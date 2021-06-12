@@ -6,7 +6,6 @@ var _drawY = _guiH * 0.5;
 var _drawX = _guiW * 0.5;
 
 var _buttonW = 150;
-var _buttonWLong = 300;
 var _buttonH = 70;
 var _buttonSpacing = 30;
 
@@ -23,6 +22,7 @@ switch (menuState)
 		_drawY += _buttonH + _buttonSpacing;
 		if (button(_drawX, _drawY, _buttonW, _buttonH, "Quit", true))
 			game_end();
+		
 	}
 	break;
 	
@@ -32,10 +32,11 @@ switch (menuState)
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_bottom);
-		draw_text_transformed_colour(_guiW * 0.5, _levelSelectionY - 50, "LEVEL SELECTION", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+		draw_text_transformed_colour(_guiW * 0.5, _levelSelectionY - 50, "LEVEL SELECION", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		
+		var _buttonWLong = _buttonW * 2;
 		if (button(50 + _buttonWLong * 0.5, _guiH - 50 - _buttonH, _buttonWLong, _buttonH, "Back to Menu", true))
 			menuState = menu.mainMenu;
 		
@@ -54,7 +55,7 @@ switch (menuState)
 				var _level = _r * _columns + _c;
 				var _drawX = _levelX + (_levelW + _levelSpacing) * _c;
 				var _drawY = _levelY + (_levelH + _levelSpacing) * _r;
-				if button(_drawX, _drawY, _levelW, _levelH, _level, (levelUnlocked >= _level))
+				if button(_drawX, _drawY, _levelW, _levelH, _level, true)
 				{
 					if (_level < array_length(levelArray))
 					{
@@ -68,34 +69,5 @@ switch (menuState)
 		draw_line_colour(_guiW * 0.5, 0, _guiW * 0.5, _guiH, c_green, c_green);
 	}
 	break;
-	
-	case menu.game:
-	{
-		draw_text_transformed_colour(30, 30, "press ESC to pause", 0.5, 0.5, 0,
-									 c_white, c_white, c_white, c_white, 1)
-		if (keyboard_check_pressed(vk_escape))
-			menuState = menu.pause;
-	}
-	break;
-	
-	case menu.pause:
-	{
-		_drawY = _guiH * 0.4;
-		
-		draw_set_halign(fa_center);
-		draw_set_valign(fa_bottom);
-		draw_text_transformed_colour(_guiW * 0.5, _drawY - _buttonH - 50, "GAME PAUSED", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
-		draw_set_halign(fa_left);
-		draw_set_valign(fa_top);
-		
-		if (button(_drawX, _drawY, _buttonWLong, _buttonH, "Continue", true))
-			menuState = menu.game;
-		
-		_drawY += _buttonH + _buttonSpacing;
-		if (button(_drawX, _drawY, _buttonWLong, _buttonH, "Main Menu", true))
-			menuState = menu.mainMenu;
-	}
-	break;
 }
 
-show_debug_message(menuState);

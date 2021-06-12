@@ -15,7 +15,8 @@ if (oBall.moveState = STATE.thrown and dashPress)
 	ballDir = point_direction(x,y,ballX,ballY)
 	var dashSpd = baseSpd + (distToBall * spdMult)
 	dhsp += lengthdir_x(dashSpd,ballDir) 
-	dvsp += lengthdir_y(dashSpd,ballDir) 
+	dvsp += lengthdir_y(dashSpd,ballDir)
+	oBall.dashed = true
 }
 
 DashFriction()

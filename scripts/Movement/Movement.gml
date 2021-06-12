@@ -39,10 +39,6 @@ function Input(active)
 		dashHold = mouse_check_button(mb_left)
 		dashPress = mouse_check_button_pressed(mb_left)
 		dashRelease = mouse_check_button_released(mb_left)
-		
-		returnHold = mouse_check_button(mb_right)
-		returnPress = mouse_check_button_pressed(mb_right)
-		returnRelease = mouse_check_button_released(mb_right)
 	}
 }
 
