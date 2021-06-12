@@ -27,12 +27,16 @@ if (oBall.moveState = STATE.thrown and dashPress)
 	var dashSpd = baseSpd + (distToBall * spdMult)
 	dhsp += lengthdir_x(dashSpd,ballDir) 
 	dvsp += lengthdir_y(dashSpd,ballDir)
+	if (dvsp < 0) wvsp = 0
 	oBall.dashed = true
 	global.screenShake += 6
 	audio_play_sound(sndDash,0,0)
 }
 
 DashFriction()
+
+//Movement cancel
+if (sign(whsp) == -sign(dhsp)) dhsp *= movementCancel
 
 //Spd sum
 hsp = whsp + dhsp
@@ -48,7 +52,7 @@ if (place_meeting(x,y,oSpike))
 	dvsp = 0
 	wvsp = 0
 	oBall.moveState = STATE.connected
-	oBall.dashed = true
+	oBall.dashed = false
 	x = xstart
 	y = ystart
 }

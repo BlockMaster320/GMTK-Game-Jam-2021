@@ -6,15 +6,16 @@ dvsp = 0
 vsp = 0
 collisionSpdDecrease = 0.2	//O kolik % ze zmenší rychlos po nárazu do zdi
 walkSp = 0.7
-runSp = 1.5
-grvLight = 0.3
-grvHeavy = 0.8
+runSp = 2
+grvLight = 0.2
+grvHeavy = 0.5
 frc = 0.025
 grndFrc = 0.75
+movementCancel = 0.85
 
 //Dash
 baseSpd = 6
-spdMult = 0.04
+spdMult = 0.03
 
 //Player Animation
 animSpeed = 0;

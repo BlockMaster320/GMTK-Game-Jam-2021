@@ -4,7 +4,7 @@ function Collision()
 	if (place_meeting(x + hsp,y,oBlock))
 	{
 		while (!place_meeting(x + sign(hsp),y,oBlock)) x = x + sign(hsp);
-		if (abs(hsp) > 10) ImpactSound()
+		if (abs(hsp) > 5) ImpactSound()
 		hsp = 0;
 		dhsp *= collisionSpdDecrease
 	}
@@ -14,7 +14,7 @@ function Collision()
 	if (place_meeting(x,y + vsp,oBlock))
 	{
 		while (!place_meeting(x,y + sign(vsp),oBlock)) y = y + sign(vsp);
-		if (abs(vsp) > 10) ImpactSound()
+		if (abs(vsp) > 5) ImpactSound()
 		if (sign(vsp) == 1) dvsp = 0
 		vsp = 0
 		wvsp = 0
