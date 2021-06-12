@@ -11,12 +11,18 @@ switch (moveState)
 		x = pX
 		y = pY
 		
-		if (dashPress) charging = true
+		if (dashPress)
+		{
+			charging = true
+			audio_play_sound(sndWindup,0,0)
+		}
 		
 		if (charging)
 		{
 			throwTime = clamp(throwTime+1,0,throwMaxTime)
 			throwStrength = throwStrengthBase + (throwMult * throwTime)
+			if (!audio_is_playing(sndWindup) and !audio_is_playing(sndWindupMiddle))
+				audio_play_sound(sndWindupMiddle,0,1)
 		}
 		else throwTime = 0
 		if (dashRelease and charging)
@@ -24,7 +30,11 @@ switch (moveState)
 			dhsp = lengthdir_x(throwStrength,mDir)
 			dvsp = lengthdir_y(throwStrength,mDir)
 			moveState = STATE.thrown
+			
 			global.screenShake += 6
+			audio_stop_sound(sndWindup)
+			audio_stop_sound(sndWindupMiddle)
+			audio_play_sound(sndThrow,0,0)
 			
 			oPlayer.sprite_index = sPlayerKick;
 		}
@@ -37,6 +47,7 @@ switch (moveState)
 		collide = true
 		if (dashPress and dashed)
 		{
+			audio_play_sound(sndReturning,0,0)
 			moveState = STATE.comingBack
 			dashed = false
 		}
@@ -54,6 +65,8 @@ switch (moveState)
 			wvsp = 0
 			
 			global.screenShake += 6
+			audio_stop_sound(sndReturning)
+			audio_play_sound(sndReturn,0,0)
 		}
 		else
 		{

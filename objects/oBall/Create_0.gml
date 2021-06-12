@@ -31,4 +31,4 @@ throwMult = 0.15
 dashed = false
 
 //Return
-returnSpeed = 50
+returnSpeed = 15
