@@ -13,5 +13,5 @@ frc = 0.025
 grndFrc = 0.75
 
 //Dash
-baseSpd = 8
-spdMult = 0.03
+baseSpd = 6
+spdMult = 0.04

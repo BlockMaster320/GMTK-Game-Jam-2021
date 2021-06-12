@@ -57,5 +57,4 @@ function DashFriction()
 	finalFrict = place_meeting(x,y+1,oBlock) ? grndFrc : frc
 	dhsp -= min(finalFrict,abs(dhsp)) * sign(dhsp)
 	dvsp -= min(finalFrict,abs(dvsp)) * sign(dvsp)
-	show_debug_message(dhsp - finalFrict * sign(dhsp))
 }

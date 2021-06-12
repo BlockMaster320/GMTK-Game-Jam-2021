@@ -28,6 +28,7 @@ if (oBall.moveState = STATE.thrown and dashPress)
 	dhsp += lengthdir_x(dashSpd,ballDir) 
 	dvsp += lengthdir_y(dashSpd,ballDir)
 	oBall.dashed = true
+	global.screenShake += 6
 }
 
 DashFriction()

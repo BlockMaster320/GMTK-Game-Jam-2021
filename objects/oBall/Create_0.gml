@@ -22,7 +22,7 @@ collide = true
 //Throw
 charging = false
 throwStrength = 0
-throwStrengthBase = 10
+throwStrengthBase = 5
 throwTime = 0
 throwMaxTime = 50
 throwMult = 0.2
