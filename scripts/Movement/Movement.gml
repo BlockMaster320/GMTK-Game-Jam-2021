@@ -13,6 +13,7 @@ function Collision()
 	if (place_meeting(x,y + vsp,oBlock))
 	{
 		while (!place_meeting(x,y + sign(vsp),oBlock)) y = y + sign(vsp);
+		if (sign(vsp) == 1) dvsp = 0
 		vsp = 0
 		wvsp = 0
 		dvsp *= collisionSpdDecrease
@@ -38,5 +39,17 @@ function Input(active)
 		dashHold = mouse_check_button(mb_left)
 		dashPress = mouse_check_button_pressed(mb_left)
 		dashRelease = mouse_check_button_released(mb_left)
+		
+		returnHold = mouse_check_button(mb_right)
+		returnPress = mouse_check_button_pressed(mb_right)
+		returnRelease = mouse_check_button_released(mb_right)
 	}
+}
+
+function DashFriction()
+{
+	finalFrict = place_meeting(x,y+1,oBlock) ? grndFrc : frc
+	dhsp -= min(finalFrict,abs(dhsp)) * sign(dhsp)
+	dvsp -= min(finalFrict,abs(dvsp)) * sign(dvsp)
+	show_debug_message(dhsp - finalFrict * sign(dhsp))
 }
