@@ -47,3 +47,11 @@ if (sprite_index != _previousSprite)
 
 animFrame += (animTimer % _animSpeed == 0);
 animTimer ++;
+
+
+//Draw a Chain to Ball
+if (instance_exists(oBall))
+{
+	draw_line_width_colour(x, y, oBall.x, oBall.y, 3, c_dkgrey, c_dkgrey);
+	
+}
