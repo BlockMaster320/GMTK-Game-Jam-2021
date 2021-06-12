@@ -27,6 +27,7 @@
     {"id":{"name":"sndWindupMiddle","path":"sounds/sndWindupMiddle/sndWindupMiddle.yy",},"order":8,},
     {"id":{"name":"Movement","path":"scripts/Movement/Movement.yy",},"order":0,},
     {"id":{"name":"oBall","path":"objects/oBall/oBall.yy",},"order":2,},
+    {"id":{"name":"Shader1","path":"shaders/Shader1/Shader1.yy",},"order":8,},
     {"id":{"name":"sPlayerRun","path":"sprites/sPlayerRun/sPlayerRun.yy",},"order":3,},
     {"id":{"name":"sndImpact4","path":"sounds/sndImpact4/sndImpact4.yy",},"order":4,},
     {"id":{"name":"sndWindup","path":"sounds/sndWindup/sndWindup.yy",},"order":0,},

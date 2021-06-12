@@ -25,7 +25,7 @@ throwStrength = 0
 throwStrengthBase = 5
 throwTime = 0
 throwMaxTime = 50
-throwMult = 0.15
+throwMult = 0.2
 
 //Thrown
 dashed = false
