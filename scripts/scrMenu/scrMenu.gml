@@ -15,7 +15,10 @@ function button(_x, _y, _width, _height, _text, _active)
 			_hover = true;
 			window_set_cursor(cr_handpoint);
 			if (mouse_check_button_pressed(mb_left))
+			{
 				_click = true;
+				audio_play_sound(sndClick,0,0)
+			}
 		}
 	}
 	
