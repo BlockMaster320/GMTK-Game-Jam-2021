@@ -34,11 +34,21 @@ function Input(active)
 		up = keyboard_check(ord("W")) or keyboard_check(vk_up)
 
 		//Dash
-		mDir = point_direction(x,y,mouse_x,mouse_y)
+		if (!place_meeting(oPlayer.x,oPlayer.y,oZone))
+		{
+			mDir = point_direction(x,y,mouse_x,mouse_y)
 	
-		dashHold = mouse_check_button(mb_left)
-		dashPress = mouse_check_button_pressed(mb_left)
-		dashRelease = mouse_check_button_released(mb_left)
+			dashHold = mouse_check_button(mb_left)
+			dashPress = mouse_check_button_pressed(mb_left)
+			dashRelease = mouse_check_button_released(mb_left)
+		}
+		else
+		{
+			mDir = 0
+			dashHold = 0
+			dashPress = 0
+			dashRelease = 0
+		}
 	}
 }
 

@@ -32,4 +32,3 @@ dashed = false
 
 //Return
 returnSpeed = 50
-spdBoost = 10

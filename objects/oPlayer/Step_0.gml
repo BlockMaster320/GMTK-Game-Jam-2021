@@ -1,9 +1,17 @@
 Input(true)
 
 //Walk
-var spd
-if (oBall.moveState = STATE.thrown) spd = runSp
-else spd = walkSp
+var spd, grv
+if (oBall.moveState = STATE.thrown)
+{
+	spd = runSp
+	grv = grvLight
+}
+else
+{
+	spd = walkSp
+	grv = grvHeavy
+}
 whsp = (right - left) * spd
 
 //Gravity
@@ -30,6 +38,18 @@ vsp = wvsp + dvsp
 
 //Collision
 Collision()
+
+//Death
+if (place_meeting(x,y,oSpike))
+{
+	dhsp = 0
+	dvsp = 0
+	wvsp = 0
+	oBall.moveState = STATE.connected
+	oBall.dashed = true
+	x = xstart
+	y = ystart
+}
 
 //Collision With the Goal
 if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oGoal.y, 50))
