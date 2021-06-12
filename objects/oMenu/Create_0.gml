@@ -5,9 +5,7 @@ enum menu
 {
 	mainMenu,
 	levelSelect,
-	game,
-	pause
+	game
 }
 
-levelUnlocked = 0;
 levelArray = [rmLevel0, rmLevel1, rmLevel2];
