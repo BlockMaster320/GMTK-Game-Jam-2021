@@ -25,6 +25,8 @@ switch (moveState)
 			dvsp = lengthdir_y(throwStrength,mDir)
 			moveState = STATE.thrown
 			global.screenShake += 6
+			
+			oPlayer.sprite_index = sPlayerKick;
 		}
 		
 		if (dashRelease and charging) charging = false

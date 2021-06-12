@@ -11,4 +11,4 @@ enum menu
 
 levelUnlocked = 0;
 levelCurrent = noone;
-levelArray = [rmLevel0, rmLevel1, rmLevel2];
+levelArray = [rmLevel1, rmLevel1, rmLevel2];
