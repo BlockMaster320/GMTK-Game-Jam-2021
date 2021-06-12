@@ -5,7 +5,7 @@ wvsp = 0
 dvsp = 0
 vsp = 0
 collisionSpdDecrease = 0.2	//O kolik % ze zmenší rychlos po nárazu do zdi
-grv = 0.3
+grv = 0.2
 frc = 0.025
 grndFrc = 0.75
 
@@ -25,7 +25,7 @@ throwStrength = 0
 throwStrengthBase = 5
 throwTime = 0
 throwMaxTime = 50
-throwMult = 0.15
+throwMult = 0.2
 
 //Thrown
 dashed = false
