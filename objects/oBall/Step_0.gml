@@ -16,7 +16,7 @@ switch (moveState)
 		if (charging)
 		{
 			throwTime = clamp(throwTime+1,0,throwMaxTime)
-			throwStrength = throwStrengthBase + (throwTime * .3)
+			throwStrength = throwStrengthBase + (throwMult * throwTime)
 		}
 		else throwTime = 0
 		if (dashRelease and charging)
@@ -24,6 +24,7 @@ switch (moveState)
 			dhsp = lengthdir_x(throwStrength,mDir)
 			dvsp = lengthdir_y(throwStrength,mDir)
 			moveState = STATE.thrown
+			global.screenShake += 6
 		}
 		
 		if (dashRelease and charging) charging = false
@@ -49,6 +50,8 @@ switch (moveState)
 			dvsp = 0
 			whsp = 0
 			wvsp = 0
+			
+			global.screenShake += 6
 		}
 		else
 		{
