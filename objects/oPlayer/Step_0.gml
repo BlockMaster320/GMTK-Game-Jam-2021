@@ -61,6 +61,7 @@ if (oCamera.stay > 0)
 	y = ystart
 	wvsp = 0
 	image_alpha = 0
+	oBall.moveState = STATE.connected
 }
 else if (!oCamera.stay and !cutscene) image_alpha = 1
 
@@ -117,10 +118,10 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 //particles
 var xx = oCamera.x + oCamera.vW + random_range(0,200)
 var yy = oCamera.y + random_range(-200,oCamera.vH+200)
-var spawn = random(10) < 1
+var spawn = random(4) < 1
 part_particles_create(dustCloseSys,xx,yy,dustClose,spawn)
 
 xx = oCamera.x + oCamera.vW + random_range(0,200)
 yy = oCamera.y + random_range(-200,oCamera.vH+200)
-spawn = random(5) < 1
+spawn = random(2) < 1
 part_particles_create(dustFarSys,xx,yy,dustFar,spawn)
