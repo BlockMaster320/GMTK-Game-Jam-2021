@@ -1,3 +1,4 @@
+if (keyboard_check_pressed(ord("R"))) room_restart()
 Input(true)
 
 //Walk
@@ -13,6 +14,12 @@ else
 	grv = grvLight
 }
 whsp = (right - left) * spd
+if (whsp != 0 and place_meeting(x,y+1,oBlock))
+{
+	var spawn = random(30) < 1
+	part_particles_create(dustPufSys,x,y+15,dustPuf,spawn)
+	FootStep(spd)
+}
 
 //Gravity
 wvsp += grv
@@ -48,6 +55,15 @@ vsp = wvsp + dvsp
 Collision()
 
 //Death
+if (oCamera.stay > 0)
+{
+	x = xstart
+	y = ystart
+	wvsp = 0
+	image_alpha = 0
+}
+else if (!oCamera.stay and !cutscene) image_alpha = 1
+
 if (place_meeting(x,y,oSpike))
 {
 	dhsp = 0
@@ -55,6 +71,13 @@ if (place_meeting(x,y,oSpike))
 	wvsp = 0
 	oBall.moveState = STATE.connected
 	oBall.dashed = false
+	var spd = hsp > vsp ? hsp : vsp
+	part_type_speed(blood,spd-5,spd+5,0,0)
+	var dir = point_direction(0,0,lengthdir_x(spd,sign(hsp)),lengthdir_y(spd,sign(vsp)))
+	part_type_direction(blood,dir-20,dir+20,0,0)
+	part_particles_create(bloodSys,x,y,blood,30)
+	audio_play_sound(sndDeath,0,0)
+	oCamera.stay = 50
 	x = xstart
 	y = ystart
 }
@@ -80,6 +103,8 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 			tutOpacity = 0;
 			tutProgress = 0;
 			
+			audio_play_sound(sndGoal,0,0)
+			
 			var _saveString = json_string_load(saveFile);
 			var _saveStruct = json_parse(_saveString);
 			_saveStruct.levelUnlocked = levelUnlocked;
@@ -90,7 +115,12 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 }
 
 //particles
-var xx = oCamera.x + oCamera.vW + random_range(0,50)
-var yy = oCamera.y + random_range(-50,oCamera.vH+50)
-var spawn = random(10) < 1
+var xx = oCamera.x + oCamera.vW + random_range(0,200)
+var yy = oCamera.y + random_range(-200,oCamera.vH+200)
+var spawn = random(4) < 1
 part_particles_create(dustCloseSys,xx,yy,dustClose,spawn)
+
+xx = oCamera.x + oCamera.vW + random_range(0,200)
+yy = oCamera.y + random_range(-200,oCamera.vH+200)
+spawn = random(2) < 1
+part_particles_create(dustFarSys,xx,yy,dustFar,spawn)
