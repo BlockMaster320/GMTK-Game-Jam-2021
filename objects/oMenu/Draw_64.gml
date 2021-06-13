@@ -10,6 +10,8 @@ var _buttonWLong = 300;
 var _buttonH = 70;
 var _buttonSpacing = 30;
 
+buttonHoverControl = false;
+
 draw_set_font(fntMenu);
 window_set_cursor(cr_default);
 
@@ -122,3 +124,5 @@ switch (menuState)
 	}
 	break;
 }
+
+buttonHover = buttonHoverControl;

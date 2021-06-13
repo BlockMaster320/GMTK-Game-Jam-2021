@@ -19,6 +19,13 @@ function button(_x, _y, _width, _height, _text, _active)
 				_click = true;
 				audio_play_sound(sndClick,0,0)
 			}
+			
+			with (oMenu)
+			{
+				if (buttonHover == false)
+					audio_play_sound(sndHover, 10, false);
+				buttonHoverControl = true;
+			}
 		}
 	}
 	

@@ -1,4 +1,6 @@
 menuState = menu.mainMenu;
+buttonHoverControl = false;
+buttonHover = false;
 
 //Constants
 enum menu
@@ -11,7 +13,7 @@ enum menu
 
 levelUnlocked = 0;
 levelCurrent = noone;
-levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7, rmLevel8, rmLevel9]
+levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7, rmLevel8, rmLevel9, rmLevel10]
 
 //Tutorial
 tutProgress = 0;
