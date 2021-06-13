@@ -1,4 +1,4 @@
-Input(true)
+Input(!oPlayer.cutscene)
 
 var pX = oPlayer.x
 var pY = oPlayer.y
