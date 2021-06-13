@@ -39,10 +39,11 @@ function Input(active)
 		if (!place_meeting(oPlayer.x,oPlayer.y,oZone))
 		{
 			mDir = point_direction(x,y,mouse_x,mouse_y)
-	
-			dashHold = mouse_check_button(mb_left)
-			dashPress = mouse_check_button_pressed(mb_left)
-			dashRelease = mouse_check_button_released(mb_left)
+			
+			var _turnOffDash = !(room == rmLevel0 && oMenu.tutProgress < 2)
+			dashHold = mouse_check_button(mb_left) * _turnOffDash;
+			dashPress = mouse_check_button_pressed(mb_left) * _turnOffDash;
+			dashRelease = mouse_check_button_released(mb_left) * _turnOffDash;
 		}
 		else
 		{
