@@ -2,15 +2,15 @@ Input(true)
 
 //Walk
 var spd, grv
-if (oBall.moveState = STATE.thrown)
-{
-	spd = runSp
-	grv = grvLight
-}
-else
+if (oBall.moveState = STATE.connected)
 {
 	spd = walkSp
 	grv = grvHeavy
+}
+else
+{
+	spd = runSp
+	grv = grvLight
 }
 whsp = (right - left) * spd
 
@@ -32,6 +32,8 @@ if (oBall.moveState = STATE.thrown and dashPress)
 	global.screenShake += 6
 	audio_play_sound(sndDash,0,0)
 }
+
+Spring()
 
 DashFriction()
 
