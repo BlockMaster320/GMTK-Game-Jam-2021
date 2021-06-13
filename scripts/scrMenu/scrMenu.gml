@@ -1,4 +1,4 @@
-function button(_x, _y, _width, _height, _text, _active)
+ function button(_x, _y, _width, _height, _text, _active)
 {
 	var _mouseX = window_mouse_get_x();
 	var _mouseY = window_mouse_get_y();
