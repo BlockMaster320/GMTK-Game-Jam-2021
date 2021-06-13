@@ -4,7 +4,6 @@ if (instance_exists(oBall))
 	draw_line_width_colour(x, y + 6, oBall.x, oBall.y, 1, $191919, $191919);
 }
 
-
 //Draw Self
 draw_self();
 

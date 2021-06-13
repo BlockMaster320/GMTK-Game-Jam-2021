@@ -60,7 +60,7 @@ if (place_meeting(x,y,oSpike))
 }
 
 //Collision With the Goal
-if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oGoal.y, 50))
+if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oGoal.y, 25))
 {
 	with (oMenu)
 	{
