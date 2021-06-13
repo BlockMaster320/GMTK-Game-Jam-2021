@@ -60,3 +60,33 @@ function DashFriction()
 	dhsp -= min(finalFrict,abs(dhsp)) * sign(dhsp)
 	dvsp -= min(finalFrict,abs(dvsp)) * sign(dvsp)
 }
+
+function Spring()
+{
+	var spring = instance_place(x,y,oSpring)
+	if (place_meeting(x,y,oSpring))
+	{
+		var velocity = abs(dhsp) + abs(dvsp)
+		var mult = .2
+		var boost = 10 + (velocity * mult) 
+		switch (spring.image_angle)
+		{
+			case 0:
+				dvsp = -boost
+				wvsp = 0
+				break
+				
+			case 90:
+				dhsp = -boost
+				break
+				
+			case 180:
+				dvsp = boost
+				break
+				
+			case 270:
+				dhsp = boost
+				break
+		}
+	}
+}

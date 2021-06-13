@@ -8,6 +8,7 @@ switch (moveState)
 {
 	case STATE.connected:
 		collide = false
+		image_alpha = 0
 		x = pX
 		y = pY
 		
@@ -51,6 +52,7 @@ switch (moveState)
 			moveState = STATE.comingBack
 			dashed = false
 		}
+		image_alpha = 1
 		break
 	
 	case STATE.comingBack:
@@ -81,6 +83,8 @@ if (collide)
 {
 	//Gravity
 	wvsp += grv
+
+	Spring()
 
 	DashFriction()
 
