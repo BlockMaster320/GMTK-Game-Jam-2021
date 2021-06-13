@@ -11,7 +11,7 @@ enum menu
 
 levelUnlocked = 0;
 levelCurrent = noone;
-levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7]
+levelArray = [rmLevel0, rmLevel1, rmLevel2, rmLevel3, rmLevel4, rmLevel5, rmLevel6, rmLevel7, rmLevel8, rmLevel9]
 
 //Tutorial
 tutProgress = 0;
