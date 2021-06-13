@@ -28,3 +28,22 @@ animArrayRun = [0, 1, 1, 1, 2, 3, 4, 4, 4, 5];
 
 //SHADERY
 application_surface_draw_enable(false)
+
+//Particles
+dustBurstSys = part_system_create()
+dustBurst = part_type_create()
+part_type_size(dustBurst,2,5,-.2,0)
+part_type_life(dustBurst,20,30)
+part_type_color1(dustBurst,$472C49)
+part_type_speed(dustBurst,2,4,0,0)
+part_type_gravity(dustBurst,.3,270)
+
+dustCloseSys = part_system_create()
+dustClose = part_type_create()
+part_type_size(dustClose,2,5,0,0)
+part_type_life(dustClose,800,900)
+part_type_color1(dustClose,c_white)
+part_type_speed(dustClose,.3,1,0,.05)
+part_type_direction(dustClose,170,190,random_range(-.1,.1),.3)
+part_type_alpha1(dustClose,0.3)
+part_type_blend(dustClose,true)

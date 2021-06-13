@@ -88,3 +88,9 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 		}
 	}
 }
+
+//particles
+var xx = oCamera.x + oCamera.vW + random_range(0,50)
+var yy = oCamera.y + random_range(-50,oCamera.vH+50)
+var spawn = random(10) < 1
+part_particles_create(dustCloseSys,xx,yy,dustClose,spawn)
