@@ -79,6 +79,7 @@ if (place_meeting(x,y,oSpike))
 	part_particles_create(bloodSys,x,y,blood,30)
 	audio_play_sound(sndDeath,0,0)
 	oCamera.stay = 50
+	global.screenShake = 7
 	x = xstart
 	y = ystart
 }

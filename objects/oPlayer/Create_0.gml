@@ -94,3 +94,5 @@ for (var i = 0; i < 50; i++)
 //Cutscene
 if (room = rmLevel0) cutscene = true
 else cutscene = false
+
+if (!audio_is_playing(sndSoundtrack) and !cutscene) audio_play_sound(sndSoundtrack,0,1)

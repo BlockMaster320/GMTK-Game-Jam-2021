@@ -10,4 +10,5 @@ if (image_index = 21)
 	image_index = 22
 	oPlayer.image_alpha = 1
 	oPlayer.cutscene = false
+	audio_play_sound(sndSoundtrack,0,1)
 }
