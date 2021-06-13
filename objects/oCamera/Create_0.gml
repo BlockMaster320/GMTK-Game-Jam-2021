@@ -1,5 +1,3 @@
-x = 0
-y = 0
 cam = view_camera[0]
 vW = 480
 vH = 280
