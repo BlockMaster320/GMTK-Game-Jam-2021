@@ -23,6 +23,9 @@ switch (menuState)
 		_drawY += _buttonH + _buttonSpacing;
 		if (button(_drawX, _drawY, _buttonW, _buttonH, "Quit", true))
 			game_end();
+		
+		tutProgress = 0;
+		tutOpacity = 0;
 	}
 	break;
 	
@@ -98,6 +101,9 @@ switch (menuState)
 			menuState = menu.mainMenu;
 			levelCurrent = noone;
 			room_goto(rmMenu);
+			
+			tutProgress = 0;
+			tutOpacity = 0;
 		}
 		
 		if (keyboard_check_pressed(vk_escape))
