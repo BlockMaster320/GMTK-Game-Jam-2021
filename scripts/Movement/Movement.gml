@@ -4,7 +4,14 @@ function Collision()
 	if (place_meeting(x + hsp,y,oBlock))
 	{
 		while (!place_meeting(x + sign(hsp),y,oBlock)) x = x + sign(hsp);
-		if (abs(hsp) > 5) ImpactSound()
+		if (abs(hsp) > 5)
+		{
+			ImpactSound()
+			var dir = sign(hsp) == 1 ? 180 : 0
+			var off = 60
+			part_type_direction(dustBurst,dir-off,dir+off,0,0)
+			part_particles_create(dustBurstSys,x+(sprite_width/2*sign(hsp)),y,dustBurst,30)
+		}
 		hsp = 0;
 		dhsp *= collisionSpdDecrease
 	}
@@ -14,7 +21,14 @@ function Collision()
 	if (place_meeting(x,y + vsp,oBlock))
 	{
 		while (!place_meeting(x,y + sign(vsp),oBlock)) y = y + sign(vsp);
-		if (abs(vsp) > 5) ImpactSound()
+		if (abs(vsp) > 5)
+		{
+			ImpactSound()
+			var dir = sign(vsp) == 1 ? 90 : 270
+			var off = 60
+			part_type_direction(dustBurst,dir-off,dir+off,0,0)
+			part_particles_create(dustBurstSys,x+(sprite_width/2*sign(hsp)),y,dustBurst,30)
+		}
 		if (sign(vsp) == 1) dvsp = 0
 		vsp = 0
 		wvsp = 0
