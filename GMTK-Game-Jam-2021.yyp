@@ -58,6 +58,7 @@
     {"id":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"order":1,},
     {"id":{"name":"sSpikes","path":"sprites/sSpikes/sSpikes.yy",},"order":8,},
     {"id":{"name":"oMenu","path":"objects/oMenu/oMenu.yy",},"order":6,},
+    {"id":{"name":"sDust","path":"sprites/sDust/sDust.yy",},"order":10,},
     {"id":{"name":"fntMenu","path":"fonts/fntMenu/fntMenu.yy",},"order":0,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":5,},
     {"id":{"name":"oSpike","path":"objects/oSpike/oSpike.yy",},"order":3,},
