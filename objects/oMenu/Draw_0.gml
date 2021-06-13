@@ -78,7 +78,7 @@ if (menuState == menu.game || menuState == menu.pause)
 		break;
 	}
 	
-	tutOpacity = min(tutOpacity + 0.02, 1);
+	tutOpacity = min(tutOpacity + (0.02 * !oPlayer.cutscene), 1);
 	tutAnimation += (tutAnimationSign * 2 - 1) * 0.03;
 	if (tutAnimation <= 0 || tutAnimation >= 1)
 		tutAnimationSign = !tutAnimationSign;

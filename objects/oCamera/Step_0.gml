@@ -1,5 +1,9 @@
-targetX = oPlayer.x - (vW / 2)
-targetY = oPlayer.y - (vH / 2)
+stay--
+if (stay <= 0)
+{
+	targetX = oPlayer.x - (vW / 2)
+	targetY = oPlayer.y - (vH / 2)
+}
 
 rot += random_range(-global.screenShake*.1,global.screenShake*.1)
 

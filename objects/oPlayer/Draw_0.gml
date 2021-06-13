@@ -39,7 +39,7 @@ else	//idle
 		animSpeed = 15;
 		
 		if (oBall.moveState == STATE.connected)
-			draw_sprite_ext(sPlayerBall, 0, x, y, animDirection, 1, 0, c_white, 1);
+			draw_sprite_ext(sPlayerBall, 0, x, y, animDirection, 1, 0, c_white, image_alpha);
 	}
 }
 

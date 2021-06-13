@@ -9,3 +9,7 @@ targetY = 0
 cameraSpd = 0.08
 global.screenShake = 0
 rot = 0
+
+bg = layer_create(500,"bg")
+
+stay = 0
