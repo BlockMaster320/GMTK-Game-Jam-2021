@@ -1,4 +1,5 @@
 Input(!oPlayer.cutscene)
+show_debug_message(oPlayer.cutscene)
 
 var pX = oPlayer.x
 var pY = oPlayer.y
@@ -12,7 +13,7 @@ switch (moveState)
 		x = pX
 		y = pY
 		
-		if (dashPress)
+		if (dashPress and !place_meeting(pX,pY,oZone))
 		{
 			charging = true
 			audio_play_sound(sndWindup,0,0)
@@ -59,6 +60,8 @@ switch (moveState)
 		collide = false
 		if (point_distance(x,y,pX,pY) < returnSpeed)
 		{
+			part_particles_create(oPlayer.dustPufSys,x,y,oPlayer.dustPuf,1)
+			
 			moveState = STATE.connected
 			
 			dhsp = 0
