@@ -42,11 +42,22 @@ switch (menuState)
 		if (button(50 + _buttonWLong * 0.5, _guiH - 50 - _buttonH, _buttonWLong, _buttonH, "Back to Menu", true))
 			menuState = menu.mainMenu;
 		
-		var _rows = 2;
-		var _columns = 3;
-		var _levelW = 150;
-		var _levelH = 150;
-		var _levelSpacing = 30;
+		if (button(_guiW - 50 - (_buttonWLong + 30) * 0.5, _guiH - 50 - _buttonH, _buttonWLong + 30, _buttonH, "Reset Progress", true))
+		{
+			levelUnlocked = 0;
+			
+			var _saveString = json_string_load(saveFile);
+			var _saveStruct = json_parse(_saveString);
+			_saveStruct.levelUnlocked = 0;
+			_saveString = json_stringify(_saveStruct);
+			json_string_save(_saveString, saveFile);
+		}
+		
+		var _rows = 3;
+		var _columns = 4;
+		var _levelW = 120;
+		var _levelH = 120;
+		var _levelSpacing = 25;
 		
 		var _levelX = _guiW * 0.5 - floor(_columns * 0.5) * (_levelW + _levelSpacing) + (_levelW + _levelSpacing) * 0.5 * (_columns % 2 == 0);
 		var _levelY = (_levelSelectionY + _levelH) - floor(_rows * 0.5) * (_levelH + _levelSpacing) + (_levelH + _levelSpacing) * 0.5 * (_rows % 2 == 0);
@@ -69,7 +80,7 @@ switch (menuState)
 			}
 		}
 		
-		draw_line_colour(_guiW * 0.5, 0, _guiW * 0.5, _guiH, c_green, c_green);
+		/*draw_line_colour(_guiW * 0.5, 0, _guiW * 0.5, _guiH, c_green, c_green);*/
 	}
 	break;
 	

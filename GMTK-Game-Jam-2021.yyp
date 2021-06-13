@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"scrMenu","path":"scripts/scrMenu/scrMenu.yy",},"order":0,},
+    {"id":{"name":"scrSaveLoad","path":"scripts/scrSaveLoad/scrSaveLoad.yy",},"order":3,},
     {"id":{"name":"Ground_TopLeft","path":"sprites/Ground_TopLeft/Ground_TopLeft.yy",},"order":4,},
     {"id":{"name":"rmLevel2","path":"rooms/rmLevel2/rmLevel2.yy",},"order":2,},
     {"id":{"name":"acSmoothTransition","path":"animcurves/acSmoothTransition/acSmoothTransition.yy",},"order":0,},

@@ -77,6 +77,14 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 		{
 			levelCurrent ++;
 			room_goto(levelArray[levelCurrent]);
+			tutOpacity = 0;
+			tutProgress = 0;
+			
+			var _saveString = json_string_load(saveFile);
+			var _saveStruct = json_parse(_saveString);
+			_saveStruct.levelUnlocked = levelUnlocked;
+			_saveString = json_stringify(_saveStruct);
+			json_string_save(_saveString, saveFile);
 		}
 	}
 }
