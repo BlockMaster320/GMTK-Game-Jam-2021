@@ -32,3 +32,6 @@ dashed = false
 
 //Return
 returnSpeed = 15
+
+dustBurst = oPlayer.dustBurst
+dustBurstSys = oPlayer.dustBurstSys
