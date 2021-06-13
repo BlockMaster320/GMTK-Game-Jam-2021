@@ -27,7 +27,7 @@ function Collision()
 			var dir = sign(vsp) == 1 ? 90 : 270
 			var off = 60
 			part_type_direction(dustBurst,dir-off,dir+off,0,0)
-			part_particles_create(dustBurstSys,x+(sprite_width/2*sign(hsp)),y,dustBurst,30)
+			part_particles_create(dustBurstSys,x,y+(sprite_height/2*sign(vsp)),dustBurst,30)
 		}
 		if (sign(vsp) == 1) dvsp = 0
 		vsp = 0
@@ -39,7 +39,6 @@ function Collision()
 
 function Input(active)
 {
-	if (keyboard_check_pressed(ord("R"))) game_restart()
 	/*if (keyboard_check_pressed(vk_escape)) game_end()*/
 	if (active)
 	{
@@ -66,6 +65,17 @@ function Input(active)
 			dashPress = 0
 			dashRelease = 0
 		}
+	}
+	else
+	{
+		left = 0
+		right = 0
+		up = 0
+		down = 0
+		mDir = 0
+		dashHold = 0
+		dashPress = 0
+		dashRelease = 0
 	}
 }
 
