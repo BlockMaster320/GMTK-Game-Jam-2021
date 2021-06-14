@@ -19,12 +19,22 @@ switch (menuState)
 {
 	case menu.mainMenu:
 	{
+		draw_sprite_ext(sLogo, 0, _drawX, _guiH * 0.3, 1, 1, 0, c_white, 1);
+		
 		if (button(_drawX, _drawY, _buttonW, _buttonH, "Play", true))
 			menuState = menu.levelSelect;
 		
 		_drawY += _buttonH + _buttonSpacing;
 		if (button(_drawX, _drawY, _buttonW, _buttonH, "Quit", true))
 			game_end();
+		
+		draw_set_halign(fa_right);
+		draw_set_valign(fa_bottom);
+		draw_set_font(fntMenuCredits);
+		draw_text_transformed_colour(_guiW - 20, _guiH - 20, "GAME BY:\n\n\n\nTheGreatMurloc (coding, sfxs)\n\nBlockMaster (coding, graphics)\n\nMopFlop (graphics)\n\nDemoPanCZE (music)", 1, 1, 0, c_white, c_white, c_white, c_white, 1);
+		draw_set_halign(fa_top);
+		draw_set_valign(fa_left);
+		draw_set_font(fntMenu);
 		
 		tutProgress = 0;
 		tutOpacity = 0;
@@ -33,11 +43,11 @@ switch (menuState)
 	
 	case menu.levelSelect:
 	{
-		var _levelSelectionY = _guiH * 0.3;
+		var _levelSelectionY = _guiH * 0.35;
 		
 		draw_set_halign(fa_center);
 		draw_set_valign(fa_bottom);
-		draw_text_transformed_colour(_guiW * 0.5, _levelSelectionY - 50, "LEVEL SELECTION", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
+		draw_text_transformed_colour(_guiW * 0.5, _levelSelectionY - 130, "LEVEL SELECTION", 2, 2, 0, c_white, c_white, c_white, c_white, 1);
 		draw_set_halign(fa_left);
 		draw_set_valign(fa_top);
 		
@@ -55,10 +65,10 @@ switch (menuState)
 			json_string_save(_saveString, saveFile);
 		}
 		
-		var _rows = 3;
+		var _rows = 4;
 		var _columns = 4;
-		var _levelW = 120;
-		var _levelH = 120;
+		var _levelW = 100;
+		var _levelH = 100;
 		var _levelSpacing = 25;
 		
 		var _levelX = _guiW * 0.5 - floor(_columns * 0.5) * (_levelW + _levelSpacing) + (_levelW + _levelSpacing) * 0.5 * (_columns % 2 == 0);
@@ -70,6 +80,8 @@ switch (menuState)
 				var _level = _r * _columns + _c;
 				var _drawX = _levelX + (_levelW + _levelSpacing) * _c;
 				var _drawY = _levelY + (_levelH + _levelSpacing) * _r;
+				if (_level > array_length(levelArray) - 1)
+					break;
 				if button(_drawX, _drawY, _levelW, _levelH, _level, (levelUnlocked >= _level))
 				{
 					if (_level < array_length(levelArray))
@@ -89,7 +101,7 @@ switch (menuState)
 	case menu.game:
 	{
 		draw_text_transformed_colour(30, 30, "press ESC to pause", 0.5, 0.5, 0,
-									 c_white, c_white, c_white, c_white, 1)
+									 c_white, c_white, c_black, c_black, 1)
 		if (keyboard_check_pressed(vk_escape))
 			menuState = menu.pause;
 	}
