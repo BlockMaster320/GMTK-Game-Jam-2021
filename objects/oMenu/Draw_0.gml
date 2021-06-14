@@ -29,13 +29,13 @@ if (menuState == menu.game || menuState == menu.pause)
 				draw_sprite_ext(sTutorial, 1, 225, 110, 1, 1, 155, c_white, tutOpacity);
 				
 				if (tutProgress == 2)
-					draw_sprite_ext(sTutorial, 2, 225, 45, 0.8, 0.8, 0, c_white, tutOpacity);
+					draw_sprite_ext(sTutorial, 2, 365, 180, 0.8, 0.8, 0, c_white, tutOpacity);
 				
 				if (tutProgress == 3)
-					draw_sprite_ext(sTutorial, 3, 225, 45, 0.8, 0.8, 0, c_white, tutOpacity);
+					draw_sprite_ext(sTutorial, 3, 365, 180, 0.8, 0.8, 0, c_white, tutOpacity);
 				
 				if (tutProgress == 4)
-					draw_sprite_ext(sTutorial, 4, 225, 45, 0.8, 0.8, 0, c_white, tutOpacity);
+					draw_sprite_ext(sTutorial, 4, 365, 180, 0.8, 0.8, 0, c_white, tutOpacity);
 				
 				if (dashRelease)
 				{

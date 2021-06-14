@@ -77,14 +77,14 @@ part_type_alpha2(dustPuf,1,.3)
 
 
 var xx,yy
-for (var i = 0; i < 25; i++)
+for (var i = 0; i < 15; i++)
 {
 	xx = random_range(oCamera.x,oCamera.x+480)
 	yy = random_range(oCamera.y,oCamera.y+280)
 	part_particles_create(dustCloseSys,xx,yy,dustClose,1)
 }
 
-for (var i = 0; i < 50; i++)
+for (var i = 0; i < 30; i++)
 {
 	xx = random_range(oCamera.x,oCamera.x+480)
 	yy = random_range(oCamera.y,oCamera.y+280)
