@@ -82,6 +82,18 @@ if (place_meeting(x,y,oSpike))
 	global.screenShake = 7
 	x = xstart
 	y = ystart
+	
+	
+	with (oBall)	//reset the Ball variables
+	{
+		moveState = STATE.connected
+		whsp = 0
+		dhsp = 0
+		hsp = 0
+		wvsp = 0
+		dvsp = 0
+		vsp = 0
+	}
 }
 
 //Collision With the Goal
