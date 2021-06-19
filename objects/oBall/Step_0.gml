@@ -1,5 +1,4 @@
 Input(!oPlayer.cutscene)
-show_debug_message(oPlayer.cutscene)
 
 var pX = oPlayer.x
 var pY = oPlayer.y
