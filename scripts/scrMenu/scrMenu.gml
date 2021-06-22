@@ -51,3 +51,13 @@
 	
 	return _click;
 }
+
+function button_hover(_x, _y, _width, _height, _active)
+{
+	var _mouseX = window_mouse_get_x();
+	var _mouseY = window_mouse_get_y();
+	_x -= _width * 0.5;
+	
+	if (_active && point_in_rectangle(_mouseX, _mouseY, _x, _y, _x + _width, _y + _height))
+		return true;
+}

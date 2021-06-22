@@ -18,9 +18,9 @@ if (charging)
 		var _point2 = [oPlayer.x + lengthdir_x(_lengthBase + _length, _directionBase - _angle),
 					   oPlayer.y + lengthdir_y(_lengthBase + _length, _directionBase - _angle)]
 		
-		var _colour = make_colour_hsv(56, 142, 219);
-		if (_i == 1) _colour = make_colour_hsv(30, 158, 219);
-		if (_i == 2) _colour = make_colour_hsv(7, 158, 219);
+		var _colour = GREEN;
+		if (_i == 1) _colour = YELLOW;
+		if (_i == 2) _colour = RED;
 			
 		draw_triangle_colour(_pointBase[0], _pointBase[1], _point1[0], _point1[1], _point2[0], _point2[1],
 							 _colour, _colour, _colour, false);
