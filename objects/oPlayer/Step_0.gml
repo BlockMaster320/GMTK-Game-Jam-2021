@@ -1,4 +1,12 @@
-if (keyboard_check_pressed(ord("R"))) room_restart()
+if (keyboard_check_pressed(ord("R")))
+{
+	room_restart()
+	with (oMenu)
+	{
+		timeCurrent = 0;
+		timerOn = false;
+	}
+}
 Input(!cutscene)
 
 //Walk
@@ -94,6 +102,12 @@ if (place_meeting(x,y,oSpike))
 		dvsp = 0
 		vsp = 0
 	}
+	
+	with (oMenu)
+	{
+		timeCurrent = 0;
+		timerOn = false;
+	}
 }
 
 //Collision With the Goal
@@ -101,6 +115,20 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 {
 	with (oMenu)
 	{
+		//Save the Time && Reset the Timer
+		if (timeCurrent < bestTimes[levelCurrent] || bestTimes[levelCurrent] == 0)
+		{
+			bestTimes[levelCurrent] = timeCurrent;
+			
+			var _saveStruct = json_parse(json_string_load(saveFile));
+			_saveStruct.bestTimes[levelCurrent] = timeCurrent;
+			var _saveString = json_stringify(_saveStruct);
+			json_string_save(_saveString, saveFile);
+		}
+		timeCurrent = 0;
+		timerOn = false;
+		
+		//Go to Next Level / Menu
 		if (levelCurrent == levelUnlocked)
 			levelUnlocked = min(levelUnlocked + 1, array_length(levelArray) - 1);
 		
@@ -119,10 +147,9 @@ if (point_in_circle(x + sprite_width * 0.5, y + sprite_height * 0.5, oGoal.x, oG
 			
 			audio_play_sound(sndGoal,0,0)
 			
-			var _saveString = json_string_load(saveFile);
-			var _saveStruct = json_parse(_saveString);
+			var _saveStruct = json_parse(json_string_load(saveFile));
 			_saveStruct.levelUnlocked = levelUnlocked;
-			_saveString = json_stringify(_saveStruct);
+			var _saveString = json_stringify(_saveStruct);
 			json_string_save(_saveString, saveFile);
 		}
 	}
