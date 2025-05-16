@@ -1,12 +1,13 @@
 {
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "Scripts",
-    "path": "folders/Scripts.yy",
+  "$GMScript":"v1",
+  "%Name":"scrMenu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scrMenu",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "scrMenu",
-  "tags": [],
-  "resourceType": "GMScript",
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
